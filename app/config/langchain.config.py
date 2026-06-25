@@ -20,9 +20,18 @@ def get_groq_client() -> ChatGroq:
                 status_code=500,
                 detail="GROQ_TEMPERATURE must be set in the environment."
             )
+        try:
+            temperature = float(GROQ_TEMPERATURE)
+        except (TypeError, ValueError):
+            raise ErrorHandler(
+                "Invalid configuration",
+                status_code=500,
+                detail="GROQ_TEMPERATURE must be a numeric value."
+            )
+
         __llm__instance = ChatGroq(
             api_key=GROQ_API_KEY,
             model=GROQ_MODEL,
-            temperature=GROQ_TEMPERATURE,
+            temperature=temperature,
         )
     return __llm__instance

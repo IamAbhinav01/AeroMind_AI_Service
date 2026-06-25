@@ -30,7 +30,7 @@ if not GROQ_MODEL:
         detail="Environment variable GROQ_MODEL is required"
     )
 
-if not GROQ_TEMPERATURE:
+if GROQ_TEMPERATURE is None:
     raise ErrorHandler(
         "Missing configuration",
         status_code=500,
