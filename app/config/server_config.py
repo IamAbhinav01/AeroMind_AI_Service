@@ -15,6 +15,7 @@ if not PORT:
         status_code=500,
         detail="Environment variable PORT is required"
     )
+PORT = int(PORT)
 
 if not GROQ_API_KEY:
     raise ErrorHandler(
@@ -36,3 +37,4 @@ if GROQ_TEMPERATURE is None:
         status_code=500,
         detail="Environment variable GROQ_TEMPERATURE is required"
     )
+GROQ_TEMPERATURE = float(GROQ_TEMPERATURE)

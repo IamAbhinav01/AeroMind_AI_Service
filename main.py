@@ -1,12 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.config.server_config import PORT
 from app.routes import router
 
 app = FastAPI(
     title="Aeromind AI Service",
-    description=("Ai powered flight search",
+    description=("Ai powered flight search "
                  "Using groq api key for nlp task"
                  ),
                  version="0.1.0",
@@ -36,4 +36,4 @@ def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app",host="0.0.0.0",port=8000,reload=True)
+    uvicorn.run("main:app",host="0.0.0.0",port= PORT ,reload=True)
