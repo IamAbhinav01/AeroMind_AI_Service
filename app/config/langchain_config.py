@@ -1,5 +1,5 @@
 from langchain_groq import ChatGroq
-from .server.config import GROQ_API_KEY, GROQ_MODEL, GROQ_TEMPERATURE
+from .server_config import GROQ_API_KEY, GROQ_MODEL, GROQ_TEMPERATURE
 from app.errors import ErrorHandler
 
 __llm__instance: ChatGroq | None = None
