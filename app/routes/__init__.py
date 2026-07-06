@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.services.parser import extract_info
 from pydantic import BaseModel
 
-router = APIRouter(prefix="/api/v1/ai")
+router = APIRouter(prefix="/api/v1/ai") 
 
 
 class SearchQuery(BaseModel):
