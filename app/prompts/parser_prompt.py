@@ -9,7 +9,7 @@ You are an AI assistant for a flight booking system.
     - departureAirportId (string, 3-letter IATA code, guess it if city is given, e.g., 'New York' -> 'JFK')
     - arrivalAirportId (string, 3-letter IATA code, e.g., 'London' -> 'LHR')
     - maxPrice (integer, maximum price if specified)
-    - date (string, YYYY-MM-DD if a specific date or timeframe is mentioned. Approximate if relative)
+    - date (string, YYYY-MM-DD if a specific date or timeframe is mentioned. Approximate if relative to current year if not mentioned)
     
     User Query: {requestQuery}
     
