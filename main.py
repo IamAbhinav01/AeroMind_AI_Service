@@ -21,9 +21,11 @@ app = FastAPI(
 
 app.include_router(router)
 
+@app.get("/")
+@app.get("/health")
 @app.get("/healthy")
 def health_check():
-    return {"status": "ok"}
+    return {"status": "ok", "service": "aeromind-ai"}
 
 
 
